@@ -37,7 +37,7 @@ async function handleRequest(req, res) {
   allContents.forEach(contents => {
     result = result.concat(...contents.events);
   });
-  result.concat(allContents[allContents.length - 1].footer);
+  result = result.concat(allContents[allContents.length - 1].footer);
 
   res.send(result.join('\r\n'));
   console.log('Done');
