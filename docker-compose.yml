@@ -8,3 +8,12 @@ services:
       - LETSENCRYPT_HOST=calendar-sync.lenders.dev
     expose:
       - 80
+    networks:
+      - reverse-proxy
+
+
+networks:
+  reverse-proxy:
+    # Disable this during local development
+    external:
+      name: reverse-proxy_external
