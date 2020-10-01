@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  calendar-sync:
+    build: .
+    environment:
+      - VIRTUAL_HOST=calendar-sync.lenders.dev
+      - LETSENCRYPT_HOST=calendar-sync.lenders.dev
+    volumes:
+      - .:/opt/calendar-sync
+    ports:
+      - 80:80
+    command: ["npm", "run", "watch"]
+    # command: ["sleep", "infinity"]

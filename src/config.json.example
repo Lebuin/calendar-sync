@@ -1,0 +1,14 @@
+{
+  "password": "secret sauce here",
+  "calendars": {
+    "person1": {
+      "": "https://calendar.google.com/calendar/ical/private-link-to-main-calendar.ics",
+      "Prefix 1": "https://calendar.google.com/calendar/ical/private-link2.ics",
+      "Prefix 2": "https://calendar.google.com/calendar/ical/private-link2.ics"
+    },
+    "person2": {
+      "":        "http://outlook.office365.com/owa/calendar/private-link-to-main-calendar.ics",
+      "Prefix":    "http://outlook.office365.com/owa/calendar/private-link2.ics"
+    }
+  }
+}
