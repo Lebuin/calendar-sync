@@ -3,17 +3,8 @@ version: "3"
 services:
   calendar-sync:
     build: .
-    environment:
-      - VIRTUAL_HOST=calendar-sync.lenders.dev
-      - LETSENCRYPT_HOST=calendar-sync.lenders.dev
-    expose:
-      - 80
-    networks:
-      - reverse-proxy
-
-
-networks:
-  reverse-proxy:
-    # Disable this during local development
-    external:
-      name: reverse-proxy_external
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.calendar-sync.rule=Host(`calendar-sync.lenders.dev`)"
+      - "traefik.http.routers.calendar-sync.tls=true"
+      - "traefik.http.routers.calendar-sync.tls.certresolver=myresolver"
