@@ -51,6 +51,7 @@ function getContents(text, prefix) {
       if(prefix && line.startsWith('SUMMARY:')) {
         line = `SUMMARY:(${prefix}) ${line.slice('SUMMARY:'.length)}`;
       }
+      line = line.replace('TZID=Romance Standard Time', 'TZID=Europe/Brussels')
       return line;
     });
 
